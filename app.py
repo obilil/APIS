@@ -30,7 +30,7 @@ def get_question(id):
         if question['id'] == int(id):
             return jsonify(question)
     else:
-        return jsonify({'mesg': 'question number not found'}), 
+        return jsonify({'mesg': 'question number not found'}),
 
 
 @app.route('/api/v1/questions', methods=['POST'])
@@ -42,11 +42,12 @@ def post_question():
     questions.append({'id': qtn_id, 'question': qtn, 'answers': []})
     return jsonify(questions)
 
+
 @app.route('/api/v1/questions/<id>/answers', methods=['POST'])
 def post_answer(id):
     if 'id' in request.args:
         id = int(request.args['id'])
-    
+
     for question in questions:
         if question['id'] == int(id):
             answer_list = question['answers']
