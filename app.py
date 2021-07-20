@@ -18,6 +18,7 @@ def get_allquestions():
     return jsonify(questions)
 
 
+# get question end point
 @app.route('/api/v1/questions/<id>', methods=['GET'])
 def get_question(id):
     if 'id' in request.args:
@@ -27,7 +28,6 @@ def get_question(id):
             return jsonify(question)
     else:
         return jsonify({'mesg': 'question number not found'}), 404
-
 
 
 @app.route('/api/v1/questions', methods=['POST'])
