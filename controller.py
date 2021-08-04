@@ -1,7 +1,7 @@
 from index import app
 from flask import jsonify, request
 from view import questions
-from model import Validations
+from validations import Validations
 
 validations = Validations()
 

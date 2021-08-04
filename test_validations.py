@@ -1,5 +1,5 @@
 import unittest
-from model import Validations
+from validations import Validations
 
 class TestValidations(unittest.TestCase):
     def setUp(self):
